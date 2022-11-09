@@ -1,6 +1,5 @@
 package view;
 
-import Main.Main;
 import core.Client;
 import entity.Response;
 import entity.User;
@@ -12,8 +11,8 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import Main.Main;
 
 public class P_Login extends javax.swing.JPanel implements Observer{
 
@@ -122,7 +121,8 @@ public class P_Login extends javax.swing.JPanel implements Observer{
             HomeCenter home = new HomeCenter(client, this, (User) response.getEntity());
             home.setVisible(true);
             this.setVisible(false);
-            
+            Main l = (Main) this.getTopLevelAncestor();
+            l.dispose();
         }
     }
     private void cmdRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRegisterActionPerformed

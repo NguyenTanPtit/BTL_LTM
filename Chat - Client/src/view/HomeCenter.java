@@ -1,5 +1,6 @@
 package view;
 
+import Main.Main;
 import core.Client;
 import entity.Response;
 import entity.Room;
@@ -21,6 +22,7 @@ public class HomeCenter extends javax.swing.JFrame implements Observer {
     private P_Login loginForm;
     private List<Room> listRoom;
     private List<User> listUser;
+    private Main mainForm;
 
     public HomeCenter(Client client, P_Login loginForm, User user) {
         initComponents();
@@ -272,6 +274,8 @@ public class HomeCenter extends javax.swing.JFrame implements Observer {
         client.dispose();
         loginForm.setVisible(true);
         this.dispose();
+        mainForm = new Main();
+        mainForm.setVisible(true);
 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
